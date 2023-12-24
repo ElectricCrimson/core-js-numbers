@@ -49,8 +49,8 @@ function getCircleCircumference(radius) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function getAverage(value1, value2) {
+  return value1 / 2 + value2 / 2;
 }
 
 /**
@@ -84,8 +84,8 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   x + 8 = 0       => -8
  *   5*x = 0         => 0
  */
-function getLinearEquationRoot(/* a, b */) {
-  throw new Error('Not implemented');
+function getLinearEquationRoot(a, b) {
+  return -b / a;
 }
 
 /**
@@ -105,15 +105,12 @@ function getLinearEquationRoot(/* a, b */) {
  *   (0,-1) (1,0)    => π/2
  *   (0,1) (0,1)     => 0
  */
-function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
-  // const scalarProduct = x1 * x2 + y1 * y2;
-  // const vectorLength1 = Math.abs(Math.sqrt(x1 ** 2 + y1 ** 2));
-  // const vectorLength2 = Math.abs(Math.sqrt(x2 ** 2 + y2 ** 2));
-  // const cosine = Math.cos(scalarProduct / (vectorLength1 * vectorLength2));
+function getAngleBetweenVectors(x1, y1, x2, y2) {
+  const scalarProduct = x1 * x2 + y1 * y2;
+  const vectorLength1 = Math.abs(Math.sqrt(x1 ** 2 + y1 ** 2));
+  const vectorLength2 = Math.abs(Math.sqrt(x2 ** 2 + y2 ** 2));
 
-  // return Math.cos(scalarProduct / (vectorLength1 * vectorLength2));
-
-  throw new Error('Not implemented');
+  return Math.acos(scalarProduct / (vectorLength1 * vectorLength2));
 }
 
 /**
@@ -204,6 +201,7 @@ function roundToPowerOfTen(/* num, pow */) {
  *   17 => true
  */
 function isPrime(/* n */) {
+  // return n === 2 || n === 3 || (n % 2 !== 0 && n % 3 !== 0);
   throw new Error('Not implemented');
 }
 
@@ -269,8 +267,12 @@ function getFibonacciNumber(/* index */) {
  *   10 => 55 // (1+2+3+...+10)
  *   1  => 1
  */
-function getSumToN(/* n */) {
-  throw new Error('Not implemented');
+function getSumToN(n) {
+  let sum = 0;
+  for (let i = 1; i <= n; i += 1) {
+    sum += i;
+  }
+  return sum;
 }
 
 /**
@@ -387,8 +389,8 @@ function toPrecision(number, precision) {
  * new Number(5) => 5
  * Number(-5)    => -5
  */
-function getNumberValue(/* number */) {
-  throw new Error('Not implemented');
+function getNumberValue(number) {
+  return number.valueOf();
 }
 
 /**
@@ -542,8 +544,8 @@ function getIntegerPartNumber(number) {
  * 1, 2, 3       => 6
  * 0.1, 0.2, 0.3 => 0.6
  */
-function getSumOfNumbers(/* x1, x2, x3 */) {
-  throw new Error('Not implemented');
+function getSumOfNumbers(x1, x2, x3) {
+  return (x1 + x2 + x3).toFixed(2);
 }
 
 /**
@@ -574,8 +576,8 @@ function getMaxNumber(firstNumber, secondNumber) {
  * -5, 0 => -5 | -4 | -3 | -2 | -1 | 0
  * -1, 1 => -1 | 0 | 1
  */
-function getRandomInteger(/* min, max */) {
-  throw new Error('Not implemented');
+function getRandomInteger(min, max) {
+  return Math.round(Math.random() * (max - min) + min);
 }
 
 /**
